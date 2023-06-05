@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LinkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +20,9 @@ Route::get('/', function () {
     return view('welcome', ['title' => 'Welcome!']);
 });
 
-Route::get('/link/create',);
+
+Route::prefix('link')->group(function () {
+    Route::get('create', [LinkController::class, 'create']);
+
+    Route::post('/', [LinkController::class, 'simpan']);
+});
