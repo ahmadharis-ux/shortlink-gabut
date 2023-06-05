@@ -28,10 +28,6 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('create', [LinkController::class, 'create']);
 	});
 
-
-
-
-
     Route::post('/logout', [LoginController::class,'logout']);
 });
 
