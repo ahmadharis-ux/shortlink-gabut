@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{ $title }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -19,8 +19,10 @@
 <body class="antialiased">
 
     {{-- content bakal di tengah --}}
-    <div class="container d-flex justify-content-center">
-        @yield('content')
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
+        <div>
+            @yield('content')
+        </div>
     </div>
 
 
