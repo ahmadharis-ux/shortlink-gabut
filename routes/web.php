@@ -5,6 +5,7 @@ use App\Http\Controllers\LinkController;
 
 use App\Http\Controllers\DaftarController;
 use App\Http\Controllers\LoginController;
+use Illuminate\Auth\Events\Login;
 
 
 
@@ -27,6 +28,10 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::post('/', [LinkController::class, 'simpan']);
 		Route::get('create', [LinkController::class, 'create']);
 	});
+
+
+
+
 
     Route::post('/logout', [LoginController::class,'logout']);
 });
