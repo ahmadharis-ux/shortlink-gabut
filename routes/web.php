@@ -1,6 +1,12 @@
 <?php
 
+
 use App\Http\Controllers\LinkController;
+
+use App\Http\Controllers\DaftarController;
+use App\Http\Controllers\LoginController;
+use Illuminate\Auth\Events\Login;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,15 +20,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-Route::get('/', function () {
-    return view('welcome', ['title' => 'Welcome!']);
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        return view('welcome', ['title' => 'Welcome!']);
+    });
+    
+    Route::get('/link/create',);
+    Route::post('/logout', [LoginController::class,'logout']);
 });
 
 
 Route::prefix('link')->group(function () {
     Route::get('create', [LinkController::class, 'create']);
 
-    Route::post('/', [LinkController::class, 'simpan']);
+    Route::post('/', [LinkController::class, 
+ });         
+Route::group(['middleware'=> 'guest'], function(){
+    Route::get('/login', [LoginController::class,'index']);
+    Route::post('/login', [LoginController::class,'input']);
+    
+    
+    Route::get('/daftar', [DaftarController::class,'index']);
+    Route::post('/daftar', [DaftarController::class,'input']);
+
 });
