@@ -19,10 +19,8 @@
 <body class="antialiased">
 
     {{-- content bakal di tengah --}}
-    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
-        <div>
-            @yield('content')
-        </div>
+    <div class="container pt-3">
+        @yield('content')
     </div>
 
 
