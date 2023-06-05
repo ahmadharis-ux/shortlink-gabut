@@ -5,7 +5,6 @@ use App\Http\Controllers\LinkController;
 
 use App\Http\Controllers\DaftarController;
 use App\Http\Controllers\LoginController;
-use Illuminate\Auth\Events\Login;
 
 
 
