@@ -24,6 +24,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        return view('welcome', ['title' => 'Welcome!']);
+    });
     Route::prefix('link')->group(function () {
         Route::post('/', [LinkController::class, 'simpan']);
         Route::get('create', [LinkController::class, 'create']);
@@ -35,9 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::group(['middleware' => 'guest'], function () {
-    Route::get('/', function () {
-        return view('welcome', ['title' => 'Welcome!']);
-    });
+   
 
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'input']);

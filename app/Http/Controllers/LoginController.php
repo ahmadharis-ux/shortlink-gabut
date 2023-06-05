@@ -24,7 +24,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect('/link/create')->with('success', 'Login Berhasil!');
+            return redirect('/')->with('success', 'Login Berhasil!');
         } else {
             return redirect('/login')->with('error', 'Login Gagal, Periksa Kembali Email dan Password Anda.');
         }
