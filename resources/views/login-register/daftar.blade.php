@@ -11,11 +11,15 @@
 @endif
 <div class="card mt-3 col-4">
     <div class="card-header">
-        Login
+        Pendaftaran
     </div>
-    <form action="/login" method="post">
+    <form action="/daftar" method="post">
         @csrf
     <div class="card-body">
+            <div class="mb-3">
+                <label for="">Username</label>
+                <input type="text" class="form-control" name="name">
+            </div>
             <div class="mb-3">
                 <label for="">Email</label>
                 <input type="text" class="form-control" name="email">
@@ -26,8 +30,8 @@
             </div>
         </div>
         <div class="card-footer text-center">
-            <button type="submit" class="btn btn-sm btn-primary mb-2">Log In</button><br>
-            <a href="/daftar" style="border: none" ><label> Daftar ? .....</label></a>
+            <button type="submit" class="btn btn-sm btn-primary mb-2">Daftar</button><br>
+            <a href="/login" style="border: none" ><label>Sudah Punya Akun?</label></a>
         </div>
     </form>
 </div>
